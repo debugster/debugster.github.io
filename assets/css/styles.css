@@ -548,11 +548,14 @@ img {
 .skills__close .skills__list {
     height: 0;
     overflow: hidden;
+    transition: .7s;
+    transform: translateY(-3rem);
 }
 
 .skills__open .skills__list {
     height: max-content;
     margin-bottom: var(--mb-2-5);
+    transition: .7s;
 }
 
 .skills__open .skills__arrow {
