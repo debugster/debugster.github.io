@@ -562,6 +562,16 @@ img {
     transform: rotate(-180deg);
 }
 
+.skills__image {
+    width: 48px;
+    height: 48px;
+}
+
+.skills__item {
+    text-align: center;
+    margin-bottom: var(--mb-2);
+}
+
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs {
     display: flex;
