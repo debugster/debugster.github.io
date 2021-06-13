@@ -605,15 +605,24 @@ img {
     font-weight: var(--font-medium);
 }
 
-.career__subtitle {
+.career__institute {
     display: inline-block;
     font-size: var(--small-font-size);
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb-0-25);
+}
+
+.career__location {
+    display: inline-block;
+    font-size: var(--small-font-size);
 }
 
 .career__calendar {
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
+}
+
+.career__year {
+    margin-left: var(--mb-0-25);
 }
 
 .career__rounder {
@@ -1336,5 +1345,9 @@ img {
 
     .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .career__data {
+        grid-template-columns: 16rem max-content 16rem;
     }
 }
