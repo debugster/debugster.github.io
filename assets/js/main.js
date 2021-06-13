@@ -49,7 +49,7 @@ $(document).ready(() => {
         $(this).on("click", toggleSkills)
     });
 
-    /*==================== QUALIFICATION TABS ====================*/
+    /*==================== CAREER TABS ====================*/
     const $tabs = $("[data-target]");
     const $tabContents = $("[data-content]");
 
@@ -58,14 +58,14 @@ $(document).ready(() => {
             const $target = $(this).data("target");
 
             $tabContents.each(function () {
-                $(this).removeClass("qualification__active");
+                $(this).removeClass("career__active");
             });
-            $($target).addClass("qualification__active");
+            $($target).addClass("career__active");
 
             $tabs.each(function () {
-                $(this).removeClass("qualification__active");
+                $(this).removeClass("career__active");
             });
-            $(this).addClass("qualification__active");
+            $(this).addClass("career__active");
         });
     });
 
