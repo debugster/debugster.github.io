@@ -79,31 +79,31 @@ $(document).ready(() => {
     });
 
     /*==================== SERVICES MODAL ====================*/
-    const $serviceModals = $(".services__modal");
-    const $modalButtons = $(".services__button");
-    const $modalCloseButtons = $(".services__modal__close");
+    // const $serviceModals = $(".services__modal");
+    // const $modalButtons = $(".services__button");
+    // const $modalCloseButtons = $(".services__modal__close");
 
-    let showModal = function (modal) {
-        $serviceModals[modal].className = "services__modal active__modal";
-    }
+    // let showModal = function (modal) {
+    //     $serviceModals[modal].className = "services__modal active__modal";
+    // }
 
-    let hideAllModal = function () {
-        $serviceModals.each(function () {
-            $(this).removeClass("active__modal");
-        });
-    }
+    // let hideAllModal = function () {
+    //     $serviceModals.each(function () {
+    //         $(this).removeClass("active__modal");
+    //     });
+    // }
 
-    $modalButtons.each(function (index) {
-        $(this).on("click", function () {
-            showModal(index);
-        });
-    });
+    // $modalButtons.each(function (index) {
+    //     $(this).on("click", function () {
+    //         showModal(index);
+    //     });
+    // });
 
-    $modalCloseButtons.each(function () {
-        $(this).on("click", function () {
-            hideAllModal();
-        });
-    });
+    // $modalCloseButtons.each(function () {
+    //     $(this).on("click", function () {
+    //         hideAllModal();
+    //     });
+    // });
 
     /*==================== PROJECT SWIPER  ====================*/
     let swiperProject = new Swiper(".project__container", {
