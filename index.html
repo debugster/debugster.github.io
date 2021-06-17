@@ -1506,7 +1506,7 @@
                             </div>
 
                             <p class="testimonial__description">
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                I have come across Nayeem Mahmud bhaia when I started my university. He was our TA of C programming course then. He was phenomenal at teaching. Later, We did some session of Data Structure with him. Expectedly,  I met one of the best instructor of mine. He is extremely talented, friendly moreover a very helpful guy. I think, anyone will be pleased to have his cooperation.
                             </p>
                         </div>
                     </div>
@@ -1550,36 +1550,86 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form grid">
+                    <form accept="#" method="POST" class="contact__form grid">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
                                 <label for="" class="contact__label">Name</label>
-                                <input type="text" class="contact__input">
+                                <input type="text" id="sender__name" class="contact__input">
                             </div>
 
                             <div class="contact__content">
                                 <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__input">
+                                <input type="email" id="sender__email" class="contact__input">
                             </div>
                         </div>
 
                         <div class="contact__content">
-                            <label for="" class="contact__label">Project</label>
-                            <input type="text" class="contact__input">
+                            <label for="" class="contact__label">Message</label>
+                            <textarea name="" id="sender__message" cols="0" rows="7" class="contact__input"></textarea>
                         </div>
 
-                        <div class="contact__content">
-                            <label for="" class="contact__label">Message</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                        <div class="contact__content" id="contact__form__error">
+                            <div class="contact__input">
+                                <p class="contact__form__error__text">
+                                    <i class="uil uil-times-circle"></i>
+                                    Please, fill up the inputs correctly.
+                                </p>
+                            </div>
                         </div>
 
                         <div>
-                            <a href="#" class="button button__flex">
+                            <a href="#contact" id="contact__form__submit__button" class="button button__flex">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
                             </a>
                         </div>
                     </form>
+
+                    <!--==================== EMAIL SENDING MODAL ====================-->
+                    <div id="email__modal__sending" class="email__modal">
+                        <div class="email__modal__content">
+                            <h4 class="email__modal__title">Hello, <span class="email__modal__sender__name"></span></h4>
+                            <!-- <i class="uil uil-times email__modal__close"></i> -->
+
+                            <ul class="email__modal__list grid">
+                                <li class="email__modal__text">
+                                    <!-- <i class="uil uil-check-circle email__modal__icon__success"></i> -->
+                                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                                    <p id="email__modal__text__sending">Your message is being sent...</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!--==================== EMAIL SUCCESS MODAL ====================-->
+                    <div id="email__modal__success" class="email__modal">
+                        <div class="email__modal__content">
+                            <h4 class="email__modal__title">Hello, <span class="email__modal__sender__name"></span></h4>
+                            <i class="uil uil-times email__modal__close"></i>
+
+                            <ul class="email__modal__list grid">
+                                <li class="email__modal__text">
+                                    <i class="uil uil-check-circle email__modal__icon__success"></i>
+                                    <p>Your message has been sent successfully. Thank you for contacting me.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--==================== EMAIL FAILED MODAL ====================-->
+                    <div id="email__modal__failed" class="email__modal">
+                        <div class="email__modal__content">
+                            <h4 class="email__modal__title">Hello, <span class="email__modal__sender__name"></span></h4>
+                            <i class="uil uil-times email__modal__close"></i>
+
+                            <ul class="email__modal__list grid">
+                                <li class="email__modal__text">
+                                    <i class="uil uil-times-circle email__modal__icon__failed"></i>
+                                    <p>Sorry! Your message couldn't be send. Please, try again later.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -1645,6 +1695,9 @@
         <!--==================== SWIPER JS ====================-->
         <!-- <script src="assets/js/swiper-bundle.min.js"></script> -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!--==================== SMTP JS ====================-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>

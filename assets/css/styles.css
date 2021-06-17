@@ -31,6 +31,7 @@
     --h1-font-size: 1.5rem;
     --h2-font-size: 1.25rem;
     --h3-font-size: 1.125rem;
+    --h4-font-size: 1rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
     --smaller-font-size: .75rem;
@@ -63,6 +64,7 @@
         --h1-font-size: 2.25rem;
         --h2-font-size: 1.5rem;
         --h3-font-size: 1.25rem;
+        --h4-font-size: 1.125rem;
         --normal-font-size: 1rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
@@ -977,6 +979,118 @@ img {
     padding: .25rem .5rem .5rem 0;
 }
 
+.contact__form__error__text {
+    color: rgb(237, 83, 83);
+}
+
+/*==================== EMAIL NOTIFICATION MODALS ====================*/
+
+.email__modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+}
+
+.email__modal__content {
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.email__modal__list {
+    row-gap: 1rem;
+}
+
+.email__modal__text {
+    display: flex;
+    font-size: var(--h4-font-size);
+}
+
+#email__modal__text__sending {
+    margin-left: -48px;
+    margin-top: 2px;
+}
+
+.email__modal__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.email__modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    cursor: pointer;
+}
+
+.email__modal__icon__success {
+    color: var(--first-color);
+    margin-right: var(--mb-0-25);
+}
+
+.email__modal__icon__failed {
+    color: red;
+    margin-right: var(--mb-0-25);
+    font-size: var(--h4-font-size);
+}
+
+/*==================== LOADING ANIMATION ====================*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--first-color) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
 /*==================== FOOTER ====================*/
 .footer {
     padding-top: 2rem;

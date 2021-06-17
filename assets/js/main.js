@@ -219,4 +219,58 @@ $(document).ready(() => {
         localStorage.setItem("selected-theme", getCurrentTheme());
         localStorage.setItem("selected-icon", getCurrentIcon());
     });
+
+    /*==================== SENDING MAIL ====================*/
+    $(".email__modal").hide();
+    $("#contact__form__error").hide();
+
+    $(".email__modal__close").on("click", () => {
+        $(".email__modal").hide();
+    });
+    
+    function sendEmail (name, email, message) {
+        $("#email__modal__sending").show();
+
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "portf73@gmail.com",
+            Password: "uwhnfwotfsjtiury",
+            To: "alive.dew@gmail.com",
+            From: email,
+            Subject: `${name} has sent a message`,
+            Body: `${message}`
+        }).then((name) => {
+            setTimeout(() => {
+                $("#email__modal__sending").hide();
+                $("#email__modal__success").show();
+            }, 2000);
+            $(".contact__form").trigger("reset");
+        }, (name) => {
+            setTimeout(() => {
+                $("#email__modal__sending").hide();
+                $("#email__modal__failed").show();
+            }, 2000);
+        });
+    }
+    
+    $(".contact__form").submit(function (event) {
+        event.preventDefault();
+        
+        let senderName = $("#sender__name").val();
+        let senderEmail = $("#sender__email").val();
+        let senderMessage = $("#sender__message").val();
+
+        if (senderName !== "" && senderEmail !== "" && senderMessage !== "") {
+            $("#contact__form__error").slideUp("slow");
+            $(".email__modal__sender__name").html(senderName);
+            sendEmail(senderName, senderEmail, senderMessage);
+        } else {
+            $("#contact__form__error").slideDown("slow");
+        }
+    });
+
+    $("#contact__form__submit__button").on("click", () => {
+        $(".contact__form").submit();
+    });
 });
+
