@@ -1,3 +1,9 @@
+$(window).on("load",function(){
+    setTimeout(() => {
+        $(".loader-wrapper").fadeOut(300);
+    }, 2000);
+});
+
 $(document).ready(() => {
     /*==================== MENU SHOW Y HIDDEN ====================*/
     const $navMenu = $("#nav-menu");
