@@ -99,7 +99,21 @@ $(document).ready(() => {
     /*==================== PROJECT SWIPER  ====================*/
     let swiperProject = new Swiper(".project__container", {
         cssMode: true,
-        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        mousewheel: true,
+        keyboard: true
+    });
+
+    /*==================== ACHIEVEMENT SWIPER  ====================*/
+    let swiperAchievement = new Swiper(".achievements__container", {
+        cssMode: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
