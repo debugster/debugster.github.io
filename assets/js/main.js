@@ -1,6 +1,9 @@
 $(window).on("load",function(){
     setTimeout(() => {
         $(".loader-wrapper").fadeOut(300);
+        $(".header").css({
+            "z-index": "100"
+        });
     }, 2000);
 });
 

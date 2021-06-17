@@ -467,7 +467,7 @@ img {
 }
 
 .about__description {
-    text-align: center;
+    text-align: justify;
     margin-bottom: var(--mb-2-5);
 }
 
@@ -1417,9 +1417,9 @@ img {
         width: 350px;
     }
 
-    .about__description {
-        text-align: initial;
-    }
+    /* .about__description {
+        text-align: justify;
+    } */
 
     .about__info {
         justify-content: space-between;
