@@ -232,9 +232,7 @@ $(document).ready(() => {
         $("#email__modal__sending").show();
 
         Email.send({
-            Host: "smtp.gmail.com",
-            Username: "portf73@gmail.com",
-            Password: "uwhnfwotfsjtiury",
+            SecureToken: "a41dfe35-fbe7-46b4-a9a6-8e3af78b8053",
             To: "alive.dew@gmail.com",
             From: email,
             Subject: `${name} has sent a message`,
