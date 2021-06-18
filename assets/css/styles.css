@@ -804,6 +804,12 @@ img {
     visibility: visible;
 }
 
+/* Hidden Modal */
+.hidden__modal {
+    opacity: 0;
+    visibility: hidden;
+}
+
 /*==================== PROJECTS ====================*/
 .project__container {
     overflow: initial;
@@ -1044,8 +1050,6 @@ img {
     justify-content: center;
     padding: 0 1rem;
     z-index: var(--z-modal);
-    opacity: 1;
-    visibility: visible;
     transition: .3s;
 }
 
@@ -1278,7 +1282,8 @@ img {
         padding-right: 3.5rem;
     }
 
-    .services__modal {
+    .services__modal,
+    .email__modal {
         padding: 0 .5rem;
     }
 
@@ -1454,7 +1459,8 @@ img {
         padding: 6rem 0 2rem 2.5rem;
     }
 
-    .services__modal__content {
+    .services__modal__content,
+    .email__modal__content {
         width: 450px;
     }
 

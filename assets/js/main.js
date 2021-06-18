@@ -79,31 +79,31 @@ $(document).ready(() => {
     });
 
     /*==================== SERVICES MODAL ====================*/
-    // const $serviceModals = $(".services__modal");
-    // const $modalButtons = $(".services__button");
-    // const $modalCloseButtons = $(".services__modal__close");
+    const $serviceModals = $(".services__modal");
+    const $modalButtons = $(".services__button");
+    const $modalCloseButtons = $(".services__modal__close");
 
-    // let showModal = function (modal) {
-    //     $serviceModals[modal].className = "services__modal active__modal";
-    // }
+    let showModal = function (modal) {
+        $serviceModals[modal].className = "services__modal active__modal";
+    }
 
-    // let hideAllModal = function () {
-    //     $serviceModals.each(function () {
-    //         $(this).removeClass("active__modal");
-    //     });
-    // }
+    let hideAllModal = function () {
+        $serviceModals.each(function () {
+            $(this).removeClass("active__modal");
+        });
+    }
 
-    // $modalButtons.each(function (index) {
-    //     $(this).on("click", function () {
-    //         showModal(index);
-    //     });
-    // });
+    $modalButtons.each(function (index) {
+        $(this).on("click", function () {
+            showModal(index);
+        });
+    });
 
-    // $modalCloseButtons.each(function () {
-    //     $(this).on("click", function () {
-    //         hideAllModal();
-    //     });
-    // });
+    $modalCloseButtons.each(function () {
+        $(this).on("click", function () {
+            hideAllModal();
+        });
+    });
 
     /*==================== PROJECT SWIPER  ====================*/
     let swiperProject = new Swiper(".project__container", {
@@ -230,15 +230,18 @@ $(document).ready(() => {
     });
 
     /*==================== SENDING MAIL ====================*/
-    $(".email__modal").hide();
     $("#contact__form__error").hide();
 
     $(".email__modal__close").on("click", () => {
-        $(".email__modal").hide();
+        $(".email__modal").each(function () {
+            $(this).removeClass("active__modal");
+            $(this).addClass("hidden__modal");
+        });
     });
     
     function sendEmail (name, email, message) {
-        $("#email__modal__sending").show();
+        $("#email__modal__sending").removeClass("hidden__modal");
+        $("#email__modal__sending").addClass("active__modal");
 
         Email.send({
             SecureToken: "a41dfe35-fbe7-46b4-a9a6-8e3af78b8053",
@@ -248,14 +251,20 @@ $(document).ready(() => {
             Body: `${message}`
         }).then((name) => {
             setTimeout(() => {
-                $("#email__modal__sending").hide();
-                $("#email__modal__success").show();
+                $("#email__modal__sending").removeClass("active__modal");
+                $("#email__modal__sending").addClass("hidden__modal");
+
+                $("#email__modal__success").removeClass("hidden__modal");
+                $("#email__modal__success").addClass("active__modal");
             }, 2000);
             $(".contact__form").trigger("reset");
         }, (name) => {
             setTimeout(() => {
-                $("#email__modal__sending").hide();
-                $("#email__modal__failed").show();
+                $("#email__modal__sending").removeClass("active__modal");
+                $("#email__modal__sending").addClass("hidden__modal");
+
+                $("#email__modal__failed").removeClass("hidden__modal");
+                $("#email__modal__failed").addClass("active__modal");
             }, 2000);
         });
     }
@@ -277,6 +286,7 @@ $(document).ready(() => {
     });
 
     $("#contact__form__submit__button").on("click", () => {
+        // $("#email__modal__sending").addClass("active__modal");
         $(".contact__form").submit();
     });
 });
