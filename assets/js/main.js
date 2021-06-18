@@ -79,31 +79,31 @@ $(document).ready(() => {
     });
 
     /*==================== SERVICES MODAL ====================*/
-    const $serviceModals = $(".services__modal");
-    const $modalButtons = $(".services__button");
-    const $modalCloseButtons = $(".services__modal__close");
+    // const $serviceModals = $(".services__modal");
+    // const $modalButtons = $(".services__button");
+    // const $modalCloseButtons = $(".services__modal__close");
 
-    let showModal = function (modal) {
-        $serviceModals[modal].className = "services__modal active__modal";
-    }
+    // let showModal = function (modal) {
+    //     $serviceModals[modal].className = "services__modal active__modal";
+    // }
 
-    let hideAllModal = function () {
-        $serviceModals.each(function () {
-            $(this).removeClass("active__modal");
-        });
-    }
+    // let hideAllModal = function () {
+    //     $serviceModals.each(function () {
+    //         $(this).removeClass("active__modal");
+    //     });
+    // }
 
-    $modalButtons.each(function (index) {
-        $(this).on("click", function () {
-            showModal(index);
-        });
-    });
+    // $modalButtons.each(function (index) {
+    //     $(this).on("click", function () {
+    //         showModal(index);
+    //     });
+    // });
 
-    $modalCloseButtons.each(function () {
-        $(this).on("click", function () {
-            hideAllModal();
-        });
-    });
+    // $modalCloseButtons.each(function () {
+    //     $(this).on("click", function () {
+    //         hideAllModal();
+    //     });
+    // });
 
     /*==================== PROJECT SWIPER  ====================*/
     let swiperProject = new Swiper(".project__container", {
@@ -244,7 +244,7 @@ $(document).ready(() => {
         $("#email__modal__sending").addClass("active__modal");
 
         Email.send({
-            SecureToken: "a41dfe35-fbe7-46b4-a9a6-8e3af78b8053",
+            SecureToken: "32384241-6a4b-4c8a-995d-e74b87354c6f",
             To: "alive.dew@gmail.com",
             From: email,
             Subject: `${name} has sent a message`,
@@ -286,7 +286,6 @@ $(document).ready(() => {
     });
 
     $("#contact__form__submit__button").on("click", () => {
-        // $("#email__modal__sending").addClass("active__modal");
         $(".contact__form").submit();
     });
 });
