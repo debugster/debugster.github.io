@@ -4,7 +4,7 @@ $(window).on("load",function(){
         $(".header").css({
             "z-index": "100"
         });
-    }, 2000);
+    }, 200);
 });
 
 $(document).ready(() => {
