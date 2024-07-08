@@ -245,7 +245,7 @@ $(document).ready(() => {
 
         Email.send({
             SecureToken: "32384241-6a4b-4c8a-995d-e74b87354c6f",
-            To: "alive.dew@gmail.com",
+            To: "nayeem@gmail.com",
             From: email,
             Subject: `${name} has sent a message`,
             Body: `${message}`
